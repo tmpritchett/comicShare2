@@ -5,6 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+User.destroy_all
+
+tanyampritchett = User.create!({
+    name: "Tanya M. Pritchett"
+    email: "tanyampritchett"
+})
+
 Comic.destroy_all
 
 blackpanther = Comic.create!({
@@ -37,3 +46,4 @@ xmen = Comic.create!({
     photo_url: "https://i.imgur.com/R4tx5Rj.jpg",
     description: "X-MEN"
 })
+
