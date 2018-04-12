@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components"
 
-class header extends Component {
+class Header extends Component {
     render() {
         return (
           
@@ -10,9 +10,9 @@ class header extends Component {
                 <div>
                <h1>Comic Share</h1>
                </div>
-               
+            
                <div>
-               <Link style={{ textDecoration: 'none' }} to="/comic">
+               <Link style={{ textDecoration: 'none' }} to="/comics">
                 <h3>Sign In</h3>
                </Link>
                </div>
@@ -57,4 +57,4 @@ h1{
 
 
 
-export default header;
+export default Header;

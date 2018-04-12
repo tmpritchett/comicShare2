@@ -1,102 +1,52 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
+import EditComment from './EditComment'
+import DeleteComment from './DeleteComment'
+import axios from 'axios'
 
-
-class comments extends Component {
+class Comments extends Component {
+    state= {
+        comment: {
+            title: '',
+            text: ''
+        },
+        editForm: false,
+        deleteConfirm: false,
+    }
+    //shows delete confirm
+    toggleDelete = () => {
+        this.setState({ deleteConfirm: !this.state.deleteConfirm })
+        this.setState({ editForm: false })
+    }
+    //shows edit form
+    toggleEdit = () => {
+        this.setState({ editForm: !this.state.editForm })
+        this.setState({ deleteConfirm: false })
+    }
+    //deletes specific comment
+    deleteComment = async () => {
+        const comicId = this.props.comicId
+        const commentId = this.props.comment.id
+        await axios.delete(`/api/comics/${comicId}/comments/${commentId}`)
+        await this.props.refreshComments()
+        this.toggleDelete()
+    }
     render() {
         return (
             <div>
-        <CommentForm>
-          <form
-            id="form"
-            onSubmit={this.props.createComment}
-            className="topBefore"
-          >
-            <input
-              onChange={this.props.handleChange}
-              placeholder="Title"
-              type="text"
-              name="title"
-              value={this.props.newComment.title}
-              //validations
-              maxLength="200"
-              required
-            />
-
-            <textarea
-              onChange={this.props.handleChange}
-              placeholder="Content"
-              type="text"
-              name="content"
-              value={this.props.newComment.content}
-              //validations
-              maxLength="1000"
-              required
-            />
-            <input id="submit" type="submit" value="Add" />
-          </form>
-        </CommentForm>
-      </div>
-    );
-  }
+                <h3>{this.props.comment.title}</h3>
+                <p>{this.props.comment.content}</p>
+                {/* toggle buttons */}
+                <button onClick={this.toggleEdit}>edit</button>
+                <button onClick={this.toggleDelete}>delete</button>
+                {/* ternary statements to display forms and delete confirm */}
+                {this.state.editForm ? <EditComment toggleEdit={this.toggleEdit} comment={this.props.comment} cityId={this.props.comicId} refreshComments={this.props.refreshComments}/> : null}
+                {this.state.deleteConfirm ? <DeleteComment deleteComment={this.deleteComment} cancelDelete={this.toggleDelete}/> : null}
+                <hr />
+            </div>
+        );
+    }
 }
-    
-const CommentForm = styled.div`
-body {
-	font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
-	font-size: 13px;
-}
+                
+        
+export default Comments;
 
-#comment_form input, #comment_form textarea {
-	border: 4px solid rgba(0,0,0,0.1);
-	padding: 8px 10px;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	
-	outline: 0;
-}
-
-#comment_form textarea {
-	width: 350px;
-}
-
-#comment_form input[type="submit"] {
-	cursor: pointer;
-	background: -webkit-linear-gradient(top, #efefef, #ddd);
-	background: -moz-linear-gradient(top, #efefef, #ddd);
-	background: -ms-linear-gradient(top, #efefef, #ddd);
-	background: -o-linear-gradient(top, #efefef, #ddd);
-	background: linear-gradient(top, #efefef, #ddd);
-	color: #333;
-	text-shadow: 0px 1px 1px rgba(255,255,255,1);
-	border: 1px solid #ccc;
-}
-
-#comment_form input[type="submit"]:hover {
-	background: -webkit-linear-gradient(top, #eee, #ccc);
-	background: -moz-linear-gradient(top, #eee, #ccc);
-	background: -ms-linear-gradient(top, #eee, #ccc);
-	background: -o-linear-gradient(top, #eee, #ccc);
-	background: linear-gradient(top, #eee, #ccc);
-	border: 1px solid #bbb;
-}
-
-#comment_form input[type="submit"]:active {
-	background: -webkit-linear-gradient(top, #ddd, #aaa);
-	background: -moz-linear-gradient(top, #ddd, #aaa);
-	background: -ms-linear-gradient(top, #ddd, #aaa);
-	background: -o-linear-gradient(top, #ddd, #aaa);
-	background: linear-gradient(top, #ddd, #aaa);	
-	border: 1px solid #999;
-}
-
-#comment_form div {
-	margin-bottom: 8px;
-}
-`
-
-
-
-export default comments;

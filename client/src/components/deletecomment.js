@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class deletecomment extends Component {
+class DeleteComment extends Component {
     render() {
         return (
             <div>
@@ -14,5 +14,5 @@ class deletecomment extends Component {
     }
 }
 
-export default deletecomment;
+export default DeleteComment;
 

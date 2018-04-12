@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 
-class userpage extends Component {
+class UserPage extends Component {
     render() {
         return (
             <div>
@@ -24,4 +24,4 @@ const UserPageWrapper = styled.div`
     width: 100vw;
   `
 
-export default userpage;
+export default UserPage;

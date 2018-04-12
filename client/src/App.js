@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { injectGlobal } from "styled-components";
 import './App.css';
+import axios from 'axios'
 
-import UserPage from './components/userpage';
-import ComicPage from './components/comicpage'
-import Header from './components/header';
-import Footer from './components/footer';
-import Comments from './components/comments';
+import UserPage from './components/UserPage';
+import ComicPage from './components/ComicPage'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Comments from './components/Comments';
+
 
 
 injectGlobal`
