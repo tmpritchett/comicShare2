@@ -3,7 +3,9 @@
 one:
   title: MyString
   text: MyString
+  comic: one
 
 two:
   title: MyString
   text: MyString
+  comic: two

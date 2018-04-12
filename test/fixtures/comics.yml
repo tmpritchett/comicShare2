@@ -4,8 +4,10 @@ one:
   title: MyString
   description: MyString
   photo_url: MyString
+  user: one
 
 two:
   title: MyString
   description: MyString
   photo_url: MyString
+  user: two

@@ -1,21 +1,42 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { injectGlobal } from "styled-components";
 import './App.css';
+
+import UserPage from './components/userpage'
+import Header from './components/header'
+import Footer from './components/footer'
+
+injectGlobal`
+@import url("https://fonts.googleapis.com/css?family=Do+Hyeon")
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+      <div> 
+      <UserPage/>
+      <HeaderWrapper/>
+        </div>
+
+button {
+  padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    align-items: center;
 }
+button:hover {
+    background-color: red;
+    color: blue;
+}
+`;
+
+
+
+
 
 export default App;

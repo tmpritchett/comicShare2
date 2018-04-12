@@ -1,10 +1,8 @@
 class Api::ComicsController < ApplicationController
     def index
         @users = User.find(params[:user_id])
-        @comics = @user.comics
-        render json: {
-            comics: @comics
-        }
+        @comics = @users.comics
+        render json: @comics
     end
     def show
         @comic = Comic.find(params[:id])
