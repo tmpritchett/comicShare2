@@ -2,19 +2,18 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 
 
-
-class userpage extends Component {
+class comicpage extends Component {
     render() {
         return (
             <div>
-               <UserPageWrapper/> 
-               
+                <ComicPageWrapper/>
+                
             </div>
         );
     }
 }
-const UserPageWrapper = styled.div`
-    background-image: url("https://i.imgur.com/1foZYsx.jpg");
+const ComicPageWrapper = styled.div`
+    background-image: url('https://i.imgur.com/soY665L.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -24,4 +23,9 @@ const UserPageWrapper = styled.div`
     width: 100vw;
   `
 
-export default userpage;
+
+
+
+
+export default comicpage;
+

@@ -3,24 +3,19 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { injectGlobal } from "styled-components";
 import './App.css';
 
-import UserPage from './components/userpage'
-import Header from './components/header'
-import Footer from './components/footer'
+import UserPage from './components/userpage';
+import ComicPage from './components/comicpage'
+import Header from './components/header';
+import Footer from './components/footer';
+import Comments from './components/comments';
+
 
 injectGlobal`
-@import url("https://fonts.googleapis.com/css?family=Do+Hyeon")
+@import url (<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">)
 
 
-class App extends Component {
-  render() {
-    return (
 
-      <div> 
-      <UserPage/>
-      <HeaderWrapper/>
-        </div>
-
-button {
+  button {
   padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -30,10 +25,27 @@ button {
     align-items: center;
 }
 button:hover {
-    background-color: red;
-    color: blue;
-}
+    background-color: Black;
+    color: white;
+} 
 `;
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Header />
+          <Switch>
+            <Route exact path='/' component={UserPage} />
+            <Route exact path='/comics' component={ComicPage} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
+}
 
 
 

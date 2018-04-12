@@ -1,43 +1,59 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled from "styled-components"
 
 class header extends Component {
     render() {
         return (
-           <div>
+          
             <HeaderWrapper>
+                <div>
                <h1>Comic Share</h1>
-               <Link style={{ textDecoration: 'none' }} to="/">
-               <h3>Sign In</h3>
+               </div>
+               
+               <div>
+               <Link style={{ textDecoration: 'none' }} to="/comic">
+                <h3>Sign In</h3>
                </Link>
+               </div>
             </HeaderWrapper>
-            </div>
+
+            
         );
     }
 }
 
 const HeaderWrapper = styled.div`
- width: 100%;
-  padding: 8px;
-  background: red;
-  color: blue;
-  text-align: right;
-  text-shadow: 1px 1px white;
-  font-family:  'Do Hyeon', sans-serif;
-  font-size: 28px;
+width: 100%;
+height: 90px;
+position: fixed;
+padding: 0;
+margin: 0;
+top: 0;
+left: 0;
+background-color: rgba(87, 41, 41, 0.75);
+/* color: #222B4A;
+text-align: center;
+font-family:  'Fredoka One', cursive;
+font-size: 20px; */
+
+
+
 
 h1{
-    font-family: 'Do Hyeon', sans-serif;
-    font-size: 52px;
-    text-shadow: 1px 2px white;
-    color: blue;
-}
-h3{
-    color:blue;
-}
+   font-family: 'Fredoka One', cursive;
+   font-size: 50px;
+   color: #222B4A;
+   text-align: center;
 
-`;
+
+ }
+
+ h3{
+    color:#222B4A;
+ }
+
+ `;
 
 
 
