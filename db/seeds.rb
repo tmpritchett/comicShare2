@@ -41,7 +41,7 @@ ironman = Comic.create!({
 secretempire = Comic.create!({
    title: "Secret Empire",
     photo_url: "https://i.imgur.com/lFlvmkb.jpg",
-    description: "Marvel Super Heroes Unite",
+    description: "Marvel Super Heroes United",
     user_id: tanyampritchett.id
 })
 

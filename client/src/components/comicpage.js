@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 import axios from 'axios';
+import CreateForm from './CreateForm';
 
 
 
@@ -71,6 +72,7 @@ class ComicPage extends Component {
                 ))}
             <div>
                 <ComicPageWrapper/>
+                <CreateForm/>
         
                 
             </div>

@@ -1,32 +1,34 @@
 import React, { Component } from 'react';
-import EditComment from './EditComment'
-import DeleteComment from './DeleteComment'
+import EditForm from './EditForm'
+import DeleteButton from './DeleteButton'
 import axios from 'axios'
+import CreateForm from './CreateForm'
+
 
 class Comments extends Component {
     state= {
         comment: {
             title: '',
-            text: ''
+            content: ''
         },
         editForm: false,
-        deleteConfirm: false,
+        deleteButton: false,
     }
     //shows delete confirm
     toggleDelete = () => {
-        this.setState({ deleteConfirm: !this.state.deleteConfirm })
+        this.setState({ deleteButton: !this.state.deleteButton })
         this.setState({ editForm: false })
     }
     //shows edit form
     toggleEdit = () => {
         this.setState({ editForm: !this.state.editForm })
-        this.setState({ deleteConfirm: false })
+        this.setState({ deleteButton: false })
     }
     //deletes specific comment
     deleteComment = async () => {
-        const comicId = this.props.comicId
+        const userId = this.props.userId
         const commentId = this.props.comment.id
-        await axios.delete(`/api/comics/${comicId}/comments/${commentId}`)
+        await axios.delete(`/api/users/${userId}/comments/${commentId}`)
         await this.props.refreshComments()
         this.toggleDelete()
     }
@@ -39,14 +41,18 @@ class Comments extends Component {
                 <button onClick={this.toggleEdit}>edit</button>
                 <button onClick={this.toggleDelete}>delete</button>
                 {/* ternary statements to display forms and delete confirm */}
-                {this.state.editForm ? <EditComment toggleEdit={this.toggleEdit} comment={this.props.comment} cityId={this.props.comicId} refreshComments={this.props.refreshComments}/> : null}
-                {this.state.deleteConfirm ? <DeleteComment deleteComment={this.deleteComment} cancelDelete={this.toggleDelete}/> : null}
+                {this.state.editForm ? <EditForm toggleEdit={this.toggleEdit} comment={this.props.comment} userId={this.props.userId} refreshComments={this.props.refreshComments}/> : null}
+                {this.state.Button ? <DeleteButton deleteComment={this.deleteComment} cancelDelete={this.toggleDelete}/> : null}
                 <hr />
+
+                <EditForm
+                userId={this.props.userId}
+                commentId = {this.props.comment.id}
+                />
+
             </div>
         );
     }
 }
-                
-        
-export default Comments;
 
+export default Comments;

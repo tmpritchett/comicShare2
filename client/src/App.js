@@ -10,30 +10,8 @@ import UserPage from './components/UserPage';
 import ComicPage from './components/ComicPage'
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Comments from './components/Comments';
-import Comic from './components/Comic';
-import ComicFans from './components/ComicFans';
+import CreateForm from './components/CreateForm';
 
-
-injectGlobal`
-@import url 
-`
-
-
-/* button {
-  padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    align-items: center;
-}
-button:hover {
-    background-color: Black;
-    color: white;
-} 
-`;  */
 
 class App extends Component {
   render() {
