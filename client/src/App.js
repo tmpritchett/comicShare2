@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { injectGlobal } from "styled-components";
 import './App.css';
 import axios from 'axios'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 import UserPage from './components/UserPage';
@@ -13,7 +13,6 @@ import Footer from './components/Footer';
 import Comments from './components/Comments';
 import Comic from './components/Comic';
 import ComicFans from './components/ComicFans';
-import SignUpPage from './components/SignUpPage'
 
 
 injectGlobal`
@@ -41,18 +40,15 @@ class App extends Component {
     return (
 
       <div>
-      <Router>
-    
-        <Switch>
-            <div>
+        <Router>
+
+          <Switch>
             <Route exact path='/' component={UserPage} />
-            <Route exact path='/signUpPage' component={SignUpPage}/>
-            <Route exact path='/users/:userId/comics' component={ComicPage} />
-            </div>
-        
+
+            <Route exact path='/comics/:userId' component={ComicPage} />
           </Switch>
-    
-      </Router>
+
+        </Router>
       </div>
     );
   }

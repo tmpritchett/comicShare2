@@ -12,7 +12,7 @@ class Header extends Component {
                </div>
             
                <div>
-               <Link style={{ textDecoration: 'none' }} to="/signUpPage">
+               <Link style={{ textDecoration: 'none' }} to="/comics">
                 <h3>Enter</h3>
                </Link>
                </div>
