@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
+import Header from "./Header"
 
-
-
-class UserPage extends Component {
-    render() {
-        return (
-            <div>
-               <UserPageWrapper/> 
-               
-            </div>
-        );
-    }
-}
 const UserPageWrapper = styled.div`
     background-image: url("https://i.imgur.com/1foZYsx.jpg");
     background-repeat: no-repeat;
@@ -23,5 +12,18 @@ const UserPageWrapper = styled.div`
     height: 100vh;
     width: 100vw;
   `
+
+class UserPage extends Component {
+    render() {
+        return (
+            <div>
+            <Header />
+               <UserPageWrapper/> 
+               
+            </div>
+        );
+    }
+}
+
 
 export default UserPage;

@@ -3,21 +3,25 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { injectGlobal } from "styled-components";
 import './App.css';
 import axios from 'axios'
+import {Link} from 'react-router-dom';
+
 
 import UserPage from './components/UserPage';
 import ComicPage from './components/ComicPage'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Comments from './components/Comments';
-
+import Comic from './components/Comic';
+import ComicFans from './components/ComicFans';
+import SignUpPage from './components/SignUpPage'
 
 
 injectGlobal`
-@import url (<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">)
+@import url 
+`
 
 
-
-  button {
+/* button {
   padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -30,21 +34,26 @@ button:hover {
     background-color: Black;
     color: white;
 } 
-`;
+`;  */
 
 class App extends Component {
   render() {
     return (
+
+      <div>
       <Router>
-        <div>
-          <Header />
-          <Switch>
+    
+        <Switch>
+            <div>
             <Route exact path='/' component={UserPage} />
-            <Route exact path='/comics' component={ComicPage} />
+            <Route exact path='/signUpPage' component={SignUpPage}/>
+            <Route exact path='/users/:userId/comics' component={ComicPage} />
+            </div>
+        
           </Switch>
-          <Footer />
-        </div>
+    
       </Router>
+      </div>
     );
   }
 }

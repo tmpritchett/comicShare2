@@ -8,12 +8,12 @@ class Header extends Component {
           
             <HeaderWrapper>
                 <div>
-               <h1>Comic Share</h1>
+               {/* <h1>Comic Share</h1> */}
                </div>
             
                <div>
-               <Link style={{ textDecoration: 'none' }} to="/comics">
-                <h3>Sign In</h3>
+               <Link style={{ textDecoration: 'none' }} to="/signUpPage">
+                <h3>Enter</h3>
                </Link>
                </div>
             </HeaderWrapper>
@@ -37,23 +37,14 @@ text-align: center;
 font-family:  'Fredoka One', cursive;
 font-size: 20px; */
 
-
-
-
-h1{
-   font-family: 'Fredoka One', cursive;
-   font-size: 50px;
+h3{
+   /* font-family: 'Fredoka One', cursive; */
+   font-size: 25px;
    color: #222B4A;
    text-align: center;
-
-
  }
-
- h3{
-    color:#222B4A;
- }
-
- `;
+`
+ 
 
 
 
