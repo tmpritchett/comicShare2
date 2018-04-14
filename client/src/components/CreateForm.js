@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import Comments from './Comments';
 import DeleteButton from './DeleteButton';
 import EditForm from './EditForm';
-import axios from 'axios'
+import axios from 'axios';
+import CreateComment from './CreateComment'
 
 class CreateForm extends Component {
   state= {
@@ -45,7 +46,8 @@ class CreateForm extends Component {
               maxLength="500"
               required
             />
-            <input id="submit" type="submit" value="Add" />
+            <input id="submit" type="submit" value="Add" /> 
+          
           </form>
         </StyleForm>
    

@@ -11,7 +11,33 @@ import ComicPage from './components/ComicPage'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CreateForm from './components/CreateForm';
+import CreateComment from './components/CreateComment';
+import Comments from './components/Comments';
+import DeleteButton from './components/DeleteButton';
+import EditForm from './components/EditForm'
 
+
+
+
+
+injectGlobal`
+@import url 
+`
+
+/* button {
+  padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    align-items: center;
+}
+button:hover {
+    background-color: Black;
+    color: white;
+} 
+`;  */
 
 class App extends Component {
   render() {

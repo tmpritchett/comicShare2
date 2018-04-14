@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 import axios from 'axios';
 import CreateForm from './CreateForm';
+import CreateComment from './CreateComment';
+import DeleteButton from './DeleteButton'
+import EditForm from './EditForm';
+import Commemts from './Comments'
 
 
 
@@ -9,15 +13,15 @@ const ComicPageWrapper = styled.div`
     background-image: url('https://i.imgur.com/soY665L.jpg');
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: fixed;
     background-size: cover;
     align-items: center;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    overflow: scroll;
   `
 const CoverStyle = styled.div`
 #comicBookCover {
-width: 10vw;
+width: 15vw;
 height: 30vh;
 
 }
@@ -55,7 +59,7 @@ class ComicPage extends Component {
       
     render() {
         return (
-            <div>
+            <ComicPageWrapper>
                 <img src={this.state.comics.photo_url} alt=""/>
                 <h1> {this.state.user.name} </h1>
                 {this.state.comics.map(comic => (
@@ -71,12 +75,12 @@ class ComicPage extends Component {
                     </div>
                 ))}
             <div>
-                <ComicPageWrapper/>
+                
                 <CreateForm/>
         
                 
             </div>
-            </div>
+            </ComicPageWrapper>
         );
     }
 }

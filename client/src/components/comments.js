@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import EditForm from './EditForm'
 import DeleteButton from './DeleteButton'
 import axios from 'axios'
-import CreateForm from './CreateForm'
+
 
 
 class Comments extends Component {
@@ -42,7 +42,7 @@ class Comments extends Component {
                 <button onClick={this.toggleDelete}>delete</button>
                 {/* ternary statements to display forms and delete confirm */}
                 {this.state.editForm ? <EditForm toggleEdit={this.toggleEdit} comment={this.props.comment} userId={this.props.userId} refreshComments={this.props.refreshComments}/> : null}
-                {this.state.Button ? <DeleteButton deleteComment={this.deleteComment} cancelDelete={this.toggleDelete}/> : null}
+                {this.state.deleteButton ? <DeleteButton deleteComment={this.deleteComment} cancelDelete={this.toggleDelete}/> : null}
                 <hr />
 
                 <EditForm
