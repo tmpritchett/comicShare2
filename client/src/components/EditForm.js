@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-import axios from 'axios'
+import styled from 'styled-components';
+import axios from 'axios';
 
 class EditForm extends Component {
     state = {
@@ -43,7 +43,7 @@ class EditForm extends Component {
                             type="text"
                             placeholder="title"
                             name="title"
-                            value={this.state.comment.title}
+                            value={this.props.comment.title}
                             //validations
                             maxLength="200"
                             required

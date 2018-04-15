@@ -35,8 +35,8 @@ class Comments extends Component {
     render() {
         return (
             <div>
-                <h3>{this.props.comment.title}</h3>
-                <p>{this.props.comment.content}</p>
+                <h3>{this.state.comment.title}</h3>
+                <p>{this.state.comment.content}</p>
                 {/* toggle buttons */}
                 <button onClick={this.toggleEdit}>edit</button>
                 <button onClick={this.toggleDelete}>delete</button>
@@ -46,8 +46,8 @@ class Comments extends Component {
                 <hr />
 
                 <EditForm
-                userId={this.props.userId}
-                commentId = {this.props.comment.id}
+                userId={this.state.userId}
+                commentId = {this.state.comment.id}
                 />
 
             </div>

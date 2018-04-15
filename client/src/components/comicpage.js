@@ -5,9 +5,8 @@ import CreateForm from './CreateForm';
 import CreateComment from './CreateComment';
 import DeleteButton from './DeleteButton'
 import EditForm from './EditForm';
-import Commemts from './Comments'
-
-
+import Comments from './Comments';
+import UploadForm from './UploadForm';
 
 const ComicPageWrapper = styled.div`
     background-image: url('https://i.imgur.com/soY665L.jpg');
@@ -23,9 +22,11 @@ const CoverStyle = styled.div`
 #comicBookCover {
 width: 15vw;
 height: 30vh;
+padding:15px;
 
 }
 `
+
 class ComicPage extends Component {
         constructor() {
             super();
@@ -66,6 +67,7 @@ class ComicPage extends Component {
                     <div key={comic.id}>
                     <h4>{comic.title}</h4>
                     <p> {comic.description}</p>
+                
                     <div>
                     <CoverStyle>
                     <img id="comicBookCover"src = {comic.photo_url} />
@@ -77,6 +79,10 @@ class ComicPage extends Component {
             <div>
                 
                 <CreateForm/>
+                <UploadForm/>
+                <DeleteButton/>
+                <Comments/>
+               
         
                 
             </div>

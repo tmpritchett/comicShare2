@@ -14,7 +14,8 @@ import CreateForm from './components/CreateForm';
 import CreateComment from './components/CreateComment';
 import Comments from './components/Comments';
 import DeleteButton from './components/DeleteButton';
-import EditForm from './components/EditForm'
+import EditForm from './components/EditForm';
+import UploadForm from './components/UploadForm';
 
 
 
