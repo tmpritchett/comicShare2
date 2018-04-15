@@ -21,9 +21,20 @@ const ComicPageWrapper = styled.div`
 const CoverStyle = styled.div`
 #comicBookCover {
 width: 15vw;
-height: 30vh;
-padding:15px;
-
+height: 30vh;;
+margin: 25px;
+margin-top: -10px;
+}
+h4{
+    color: red;
+    margin: 25px;
+    
+}
+p{
+    color: blue;
+    margin:25px;
+    margin-top: -20px;
+    
 }
 `
 
@@ -65,28 +76,34 @@ class ComicPage extends Component {
                 <h1> {this.state.user.name} </h1>
                 {this.state.comics.map(comic => (
                     <div key={comic.id}>
-                    <h4>{comic.title}</h4>
-                    <p> {comic.description}</p>
-                
+                   
+                   
+                    
                     <div>
                     <CoverStyle>
+                    <h4>{comic.title}</h4>
+                    <p> {comic.description}</p>
                     <img id="comicBookCover"src = {comic.photo_url} />
+                   
                     </CoverStyle>
                     </div>
                 
                     </div>
                 ))}
+               
+                    
             <div>
                 
                 <CreateForm/>
                 <UploadForm/>
-                <DeleteButton/>
                 <Comments/>
+                
                
-        
+               
                 
             </div>
             </ComicPageWrapper>
+            
         );
     }
 }

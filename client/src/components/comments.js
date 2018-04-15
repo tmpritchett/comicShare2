@@ -27,7 +27,7 @@ class Comments extends Component {
     //deletes specific comment
     deleteComment = async () => {
         const userId = this.props.userId
-        const commentId = this.props.comment.id
+        const commentId = this.props.comment
         await axios.delete(`/api/users/${userId}/comments/${commentId}`)
         await this.props.refreshComments()
         this.toggleDelete()

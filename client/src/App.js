@@ -22,7 +22,7 @@ import UploadForm from './components/UploadForm';
 
 
 injectGlobal`
-@import url 
+@import url("https://fonts.googleapis.com/css?family=Bungee+Shade")
 `
 
 /* button {

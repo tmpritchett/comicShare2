@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from 'styled-components';
 import axios from 'axios';
 
+
 class EditForm extends Component {
     state = {
         comment: {
@@ -18,7 +19,7 @@ class EditForm extends Component {
     saveComment = async event => {
         event.preventDefault();
         const userId = this.props.userId;
-        const commentId = this.props.comment.id;
+        const commentId = this.props.comment;
         const payload = this.state.comment;
         await axios.patch(`/api/users/${userId}/comments/${this.props.comment.id}`, payload);
         this.props.refreshComments()
@@ -43,7 +44,7 @@ class EditForm extends Component {
                             type="text"
                             placeholder="title"
                             name="title"
-                            value={this.props.comment.title}
+                            value={this.state.comment}
                             //validations
                             maxLength="200"
                             required
@@ -53,7 +54,7 @@ class EditForm extends Component {
                             type="text"
                             placeholder="content"
                             name="content"
-                            value={this.state.comment.content}
+                            value={this.state.comment}
                             //validations
                             maxLength="500"
                             required

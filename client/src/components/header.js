@@ -37,12 +37,12 @@ text-align: center;
 font-family:  'Fredoka One', cursive;
 font-size: 20px; */
 
-h3{
+/* h3{
    /* font-family: 'Fredoka One', cursive; */
    font-size: 25px;
    color: #222B4A;
-   text-align: center;
- }
+   text-align: right;
+ } */
 `
  
 
