@@ -16,6 +16,8 @@ import Comments from './components/Comments';
 import DeleteButton from './components/DeleteButton';
 import EditForm from './components/EditForm';
 import UploadForm from './components/UploadForm';
+import UserSignInPage from './components/UserSignInPage';
+import LogIn from "./components/LogIn";
 
 
 
@@ -41,7 +43,24 @@ button:hover {
 `;  */
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      isAuthenticated: false
+    };
+  }
+  
+  userHasAuthenticated = authenticated => {
+    this.setState({ isAuthenticated: authenticated });
+  }
+
   render() {
+    // const childProps = {
+    //   isAuthenticated: this.state.isAuthenticated,
+    //   userHasAuthenticated: this.userHasAuthenticated
+    // };
+    
     return (
 
       <div>
@@ -49,7 +68,9 @@ class App extends Component {
 
           <Switch>
             <Route exact path='/' component={UserPage} />
-
+            <Route exact path='/user' component={UserSignInPage} />
+            {/* <Route exact path="/login"  component={ComicPage} /> */}
+           
             <Route exact path='/comics/:userId' component={ComicPage} />
           </Switch>
 

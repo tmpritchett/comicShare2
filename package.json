@@ -9,10 +9,12 @@
         "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
     },
     "dependencies": {
+        "aws-amplify": "^0.3.0",
         "axios": "^0.18.0",
         "components": "^0.1.0",
         "npm": "^5.8.0",
         "react": "^16.3.1",
+        "react-bootstrap": "^0.32.1",
         "react-dropzone": "^4.2.9",
         "react-router-dom": "^4.2.2",
         "styled": "^1.0.0",

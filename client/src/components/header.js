@@ -8,7 +8,7 @@ class Header extends Component {
           
             <HeaderWrapper>
                 <div>
-               {/* <h1>Comic Share</h1> */}
+               <h1>Comic Share</h1>
                </div>
             
                <div>
@@ -36,7 +36,12 @@ background-color: rgba(87, 41, 41, 0.75);
 text-align: center;
 font-family:  'Fredoka One', cursive;
 font-size: 20px; */
+h1{
+font-family: 'Bungee Shade', cursive;
+text-align: center;
+font-size: 25px;
 
+}
 /* h3{
    /* font-family: 'Fredoka One', cursive; */
    font-size: 25px;
