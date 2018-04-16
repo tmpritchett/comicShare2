@@ -174,7 +174,7 @@ const StyleForm = styled.div`
     background: transparent;
     outline: none;
     color: #726659;
-    border: solid 1px #b3aca7;
+    border: solid 5px #b3aca7;
     border-bottom: none;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -196,7 +196,7 @@ const StyleForm = styled.div`
     color: #726659;
     font-family: "Lato", sans-serif;
     font-size: 0.7em;
-    border: solid 1px #b3aca7;
+    border: solid 5px #b3aca7;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -215,7 +215,7 @@ const StyleForm = styled.div`
     color: black;
     outline: none;
     cursor: pointer;
-    border: solid 1px #b3aca7;
+    border: solid 5px #b3aca7;
     border-top: none;
   }
   #submit:hover {

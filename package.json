@@ -17,8 +17,10 @@
         "react-bootstrap": "^0.32.1",
         "react-dropzone": "^4.2.9",
         "react-router-dom": "^4.2.2",
+        "react-youtube": "^7.5.0",
         "styled": "^1.0.0",
         "styled-components": "^3.2.5",
-        "superagent": "^3.8.2"
+        "superagent": "^3.8.2",
+        "youtube-embed-video": "^1.0.3"
     }
 }

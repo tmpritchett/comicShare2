@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Comments from './Comments'
+import Comments from './Comments';
+import styled from  'styled-components';
 
+const ButtonWrapper = styled.div`
+butt
 
+`
 
 
 class DeleteButton extends Component {
@@ -18,9 +22,11 @@ class DeleteButton extends Component {
     render() {
         return (
             <div>
-              PLEASE CONFIRM DELETE
+                <ButtonWrapper>
+              Please confirm delete
                 <button onClick={this.props.deleteComment}>yes</button>
-                <button onClick={this.props.cancelDelete}>no</button>  
+                <button onClick={this.props.cancelDelete}>no</button>
+                </ButtonWrapper>  
             </div>
         );
     }

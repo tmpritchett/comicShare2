@@ -23,6 +23,7 @@ import LogIn from "./components/LogIn";
 
 
 
+
 injectGlobal`
 @import url("https://fonts.googleapis.com/css?family=Bungee+Shade")
 `
@@ -68,10 +69,10 @@ class App extends Component {
 
           <Switch>
             <Route exact path='/' component={UserPage} />
-            <Route exact path='/user' component={UserSignInPage} />
-            {/* <Route exact path="/login"  component={ComicPage} /> */}
+            <Route exact path='/users' component={UserSignInPage} />
+            <Route exact path='/users/comics/:userId'  component={ComicPage} />
            
-            <Route exact path='/comics/:userId' component={ComicPage} />
+            {/* <Route exact path='/user/comics/' component={ComicPage} /> */}
           </Switch>
 
         </Router>

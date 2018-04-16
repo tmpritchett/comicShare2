@@ -20,7 +20,7 @@ class CreateComment extends Component {
       createComment = async event => {
         event.preventDefault();
         const response = await axios.post(
-          `/api/users/${this.props.userId}/comments`,
+          `/api/users/comics/${this.props.userId}`,
           this.state.newComment
         );
         //returns state to null

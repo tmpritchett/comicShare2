@@ -4,6 +4,7 @@ import { injectGlobal } from "styled-components";
 import { Link } from "react-router-dom";
 
 
+
 const UserPageWrapper = styled.div`
     background-image: url("https://i.imgur.com/1foZYsx.jpg");
     background-repeat: no-repeat;
@@ -12,8 +13,9 @@ const UserPageWrapper = styled.div`
     align-items: center;
     height: 100vh;
     width: 100vw;
-    /* margin-top: -35px;
-    margin-bottom: -35px; */
+    margin-top: -35px; 
+    margin-bottom: -35px;
+    
     
   `
 
@@ -21,16 +23,20 @@ const TextStyle = styled.div`
   font-family: 'Bungee Shade', cursive;
   text-align: center;
   font-size: 25px;
-  /* margin-top: -950px; */
   margin-left: 80px;
-  /* margin-bottom: -100px; */
+  color: #572725
+ text-shadow: 2px 2px black;
 
   `
 
 const LinkWrapper = styled.div`
   text-align: center;
+  color: white;
+  
   `
+// const YouTubeWrapper = styled.div`
 
+// `
 class UserPage extends Component {
     render() {
         return (
@@ -42,15 +48,18 @@ class UserPage extends Component {
                         <h1> Comic Share </h1>
                     </TextStyle>
 
-                    <LinkWrapper>
+                    
+                <div>
+                <LinkWrapper>
                         <div>
-                            <Link style={{ textDecoration: 'none' }} to="/user">
+                            <Link style={{ textDecoration: 'none' }} to="/users">
                                 <h3>Enter</h3>
                             </Link>
                         </div>
                     </LinkWrapper>
-
-                </div>
+             </div>
+             </div>
+               
             </UserPageWrapper>
 
         );

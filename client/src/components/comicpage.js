@@ -23,7 +23,7 @@ const CoverStyle = styled.div`
 width: 15vw;
 height: 30vh;;
 margin: 25px;
-margin-top: -10px;
+margin-top: -15px;
 }
 h4{
     color: red;
@@ -34,9 +34,10 @@ p{
     color: blue;
     margin:25px;
     margin-top: -20px;
-    
+
 }
 `
+
 
 class ComicPage extends Component {
         constructor() {
@@ -61,6 +62,7 @@ class ComicPage extends Component {
                     user: userResponse.data,
                     comics: comicsResponse.data
                 });
+                console.log(userResponse.data)
             }
             catch (error) {
                 console.log(error)
@@ -77,7 +79,8 @@ class ComicPage extends Component {
                 {this.state.comics.map(comic => (
                     <div key={comic.id}>
                    
-                   
+               
+
                     
                     <div>
                     <CoverStyle>
@@ -87,7 +90,7 @@ class ComicPage extends Component {
                    
                     </CoverStyle>
                     </div>
-                
+            
                     </div>
                 ))}
                

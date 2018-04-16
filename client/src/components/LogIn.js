@@ -3,11 +3,14 @@ import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import styled from 'styled-components';
 import axios from 'axios';
 import { Auth } from "aws-amplify";
+import {Link} from 'react-router-dom';
 
 const TextStyle = styled.div`
 font-family: 'Bungee Shade', cursive;
 text-align: center;
 font-size: 25px;
+color: gold;
+text-shadow: 2px 2px black;
 
 `
 
@@ -53,6 +56,7 @@ class LogIn extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+
     }
 
     render() {
@@ -84,7 +88,10 @@ class LogIn extends Component {
                                 disabled={!this.validateForm()}
                                 type="submit"
                             >
+                            <Link to = '/users/comics/5'>
                                 Login
+                            </Link>
+                                
                             </Button>
                         </form>
                     </div>
