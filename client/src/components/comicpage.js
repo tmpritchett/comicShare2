@@ -20,7 +20,7 @@ const ComicPageWrapper = styled.div`
   `
 const CoverStyle = styled.div`
 #comicBookCover {
-width: 15vw;
+width: 10vw;
 height: 30vh;;
 margin: 25px;
 margin-top: -15px;
