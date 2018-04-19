@@ -2,8 +2,15 @@ class Api::ComicsController < ApplicationController
     def index
         @users = User.find(params[:user_id])
         @comics = @users.comics
+        @comics = Comic.order('created_at')
         render json: @comics
     end
+    
+    def new
+        @comic =Comic.new
+    end
+
+
     def show
         @comic = Comic.find(params[:id])
         render json: {
@@ -13,6 +20,18 @@ class Api::ComicsController < ApplicationController
     def create
         @user = User.find(params[:user_id])
         @comic = @user.comics.create(comic_params)
+        @comic = Comic.new(comic_params)
+        if @comic.save
+            flash[:notice] = "Successfully added new comic!"
+            redirect_to_root_path
+        else
+            flash[:alert] = "Error adding new comic!"
+            render :new
+        end
+
+        private
+        
+
         render json: {
             comic: @comic
         }
